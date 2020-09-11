@@ -15,9 +15,25 @@ DiscordClient.init()
 
 app.post('/jira/webhook', (req, res, next) => {
 
-  console.log('/jira/webhook POST ---')
-  console.log('  req.body:', req.body)
-  console.log('  req.query:', req.query)
+  // console.log('/jira/webhook POST ---')
+  // console.log('  req.body:', req.body)
+  // console.log('  req.query:', req.query)
+
+  const { 
+    issue_event_type_name,
+    user,
+    issue
+  } = req.body
+
+  const {
+    projectKey,
+    boardId
+  } = req.query
+
+  let msg = `${projectKey} | ${issue_event_type_name} | ${issue.key} by ${user.displayName} at \n`
+    msg += `https://consultoria.atlassian.net/jira/software/projects/${projectKey}/boards/${boardId}`
+
+  DiscordClient.messageJira( msg )
 
   res.send('ok')
 
