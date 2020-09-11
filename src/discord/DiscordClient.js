@@ -20,7 +20,7 @@ client.once( 'ready', () => {
 const setupListeners = () => {
   console.log('  readyAt', client.readyAt)
   client.on( 'message', async message => {
-    console.log('message', message)
+    // console.log('message', message)
   })
 }
 
