@@ -19,7 +19,6 @@ app.post('/jira/webhook', (req, res, next) => {
   console.log('  req.body:', req.body)
   console.log('  req.query:', req.query)
 
-  discordApi.messageChannel( channelId, message )
   res.send('ok')
 
 })
