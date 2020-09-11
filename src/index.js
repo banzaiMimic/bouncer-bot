@@ -27,8 +27,7 @@ app.post('/jira/webhook', (req, res, next) => {
   } = req.body
 
   const {
-    projectKey,
-    boardId
+    projectKey
   } = req.query
 
   switch ( webhookEvent ) {
@@ -41,7 +40,7 @@ app.post('/jira/webhook', (req, res, next) => {
   }
 
   let msg = `${issue.key} | ${issue_event_type_name} | ${userName} \n`
-    msg += `https://consultoria.atlassian.net/jira/software/projects/${projectKey}/boards/${boardId}`
+    msg += `https://consultoria.atlassian.net/browse/${issue.key}`
 
   DiscordClient.messageJira( msg )
 
