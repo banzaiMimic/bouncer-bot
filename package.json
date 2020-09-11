@@ -1,0 +1,11 @@
+{
+  "name": "ihn-ai",
+  "version": "1.0.0",
+  "description": "ihn discord application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "drMimic",
+  "license": "ISC"
+}
