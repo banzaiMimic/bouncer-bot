@@ -1,0 +1,10 @@
+// pm2 config
+{
+  "name": "ihn-ai",
+  "cwd": "./",
+  "script": "./src/index.js",
+  "node_args": "-r dotenv/config", 
+  "instances": "1",
+  "env": { "NODE_ENV" : "prd" },
+  "env_dev": { "NODE_ENV" : "dev" }
+}
