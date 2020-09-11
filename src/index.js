@@ -18,10 +18,11 @@ app.post('/jira/webhook', (req, res, next) => {
   console.log('/jira/webhook POST ---')
   console.log('  req.body:', req.body)
   console.log('  req.query:', req.query)
+  let userName
 
   const { 
+    webhookEvent,
     issue_event_type_name,
-    user,
     issue
   } = req.body
 
@@ -30,7 +31,16 @@ app.post('/jira/webhook', (req, res, next) => {
     boardId
   } = req.query
 
-  let msg = `${projectKey} | ${issue_event_type_name} | ${issue.key} by ${user.displayName} at \n`
+  switch ( webhookEvent ) {
+    case 'comment_created':
+      userName = req.body.comment.author.displayName
+      break
+    case 'jira:issue_updated':
+      userName = req.body.user.displayName
+      break
+  }
+
+  let msg = `${issue.key} | ${issue_event_type_name} | ${userName} \n`
     msg += `https://consultoria.atlassian.net/jira/software/projects/${projectKey}/boards/${boardId}`
 
   DiscordClient.messageJira( msg )
