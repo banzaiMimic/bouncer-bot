@@ -33,7 +33,7 @@ app.post('/jira/webhook', (req, res, next) => {
     case 'comment_created':
       userName = req.body.comment.author.displayName
       break
-    case 'jira:issue_updated':
+    default:
       userName = req.body.user.displayName
       break
   }
