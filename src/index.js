@@ -15,9 +15,9 @@ DiscordClient.init()
 
 app.post('/jira/webhook', (req, res, next) => {
 
-  // console.log('/jira/webhook POST ---')
-  // console.log('  req.body:', req.body)
-  // console.log('  req.query:', req.query)
+  console.log('/jira/webhook POST ---')
+  console.log('  req.body:', req.body)
+  console.log('  req.query:', req.query)
 
   const { 
     issue_event_type_name,
