@@ -3,6 +3,16 @@
 
 ### development
 ```
-npm i
-npm start
+yarn
+yarn start
+```
+
+### deploy
+```
+https://devops.informaticahn.com/jenkins/job/ihn-ai/
+```
+
+### runs at
+```
+https://devapi.informaticahn.com/
 ```

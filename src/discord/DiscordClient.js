@@ -41,5 +41,6 @@ const messageJira = async( message ) => {
 
 module.exports = {
   init,
-  messageJira
+  messageJira,
+  messageChannel
 }
