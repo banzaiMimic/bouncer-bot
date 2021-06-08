@@ -21,7 +21,7 @@ app.post('/discord', auth, (req, res, next) => {
   } = req.body
 
   const msg = `${event} | ${message}`
-  DiscordClient.messageJira( msg )
+  DiscordClient.messageChannel( process.env.CCM_PAYMENT_CHANNEL_ID, msg )
   
   res.send('ok')
 })
