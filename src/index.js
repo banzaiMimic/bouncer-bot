@@ -21,6 +21,10 @@ app.post('/discord', auth, (req, res, next) => {
     channelId
   } = req.body
 
+  if (!channelId) {
+    channelId = '851683347067174932'
+  }
+
   const msg = `${event} | ${message}`
   DiscordClient.messageChannel( channelId, msg )
   
