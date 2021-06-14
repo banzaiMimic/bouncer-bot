@@ -17,11 +17,12 @@ DiscordClient.init()
 app.post('/discord', auth, (req, res, next) => {
   const {
     event,
-    message
+    message,
+    channelId
   } = req.body
 
   const msg = `${event} | ${message}`
-  DiscordClient.messageChannel( process.env.CCM_PAYMENT_CHANNEL_ID, msg )
+  DiscordClient.messageChannel( channelId, msg )
   
   res.send('ok')
 })
