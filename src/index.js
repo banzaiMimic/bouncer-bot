@@ -15,7 +15,7 @@ app.listen(PORT, HOST)
 DiscordClient.init()
 
 app.post('/discord', auth, (req, res, next) => {
-  const {
+  let {
     event,
     message,
     channelId
