@@ -33,7 +33,7 @@ app.post('/discord', auth, (req, res, next) => {
 
 app.post('/jira/webhook', (req, res, next) => {
 
-  let userName
+  let userName = 'n/a'
 
   const { 
     webhookEvent,
@@ -46,10 +46,21 @@ app.post('/jira/webhook', (req, res, next) => {
 
   switch ( webhookEvent ) {
     case 'comment_created':
-      userName = req.body.comment.author.displayName
+      //quick fix to get things up
+      if (req.body.comment) {
+        if (req.body.comment.author) {
+          if (req.body.comment.author.displayName) {
+            username = req.body.comment.author.displayName
+          }
+        }
+      }
       break
     default:
-      userName = req.body.user.displayName
+      if (req.body.user) {
+        if(req.body.user.displayName) {
+          userName = req.body.user.displayName
+        }
+      }
       break
   }
 
