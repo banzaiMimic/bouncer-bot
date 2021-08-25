@@ -1,13 +1,13 @@
 {
-  "name": "ihn-ai",
+  "name": "bouncer-bot",
   "version": "1.0.0",
-  "description": "ihn discord application",
+  "description": "bouncer-bot discord application",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -r dotenv/config src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "drMimic",
+  "author": "dr-mimic",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

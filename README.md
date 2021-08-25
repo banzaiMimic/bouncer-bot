@@ -1,18 +1,3 @@
-### pre-reqs
-- node v12.0.0
+bouncer-bot discord
 
-### development
-```
-yarn
-yarn start
-```
-
-### deploy
-```
-https://devops.informaticahn.com/jenkins/job/ihn-ai/
-```
-
-### runs at
-```
-https://devapi.informaticahn.com/
-```
+https://discord.com/api/oauth2/authorize?client_id=879874804822466600&permissions=3072&scope=bot

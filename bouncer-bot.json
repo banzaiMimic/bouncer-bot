@@ -1,6 +1,6 @@
 // pm2 config
 {
-  "name": "ihn-ai",
+  "name": "bouncer-bot",
   "cwd": "./",
   "script": "./src/index.js",
   "node_args": "-r dotenv/config", 
