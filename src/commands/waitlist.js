@@ -35,7 +35,7 @@ module.exports = {
         if (userList.length >= 1) {
           const userDeleted = userList[0]
           userList.shift()
-          message.channel.send(`[${userDeleted}] was deleted`)
+          message.channel.send(`@${userDeleted} ready up`)
         } else {
           message.channel.send('noone to delete...')
         }

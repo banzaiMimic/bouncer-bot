@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const HOST = '0.0.0.0'
-const PORT = 8090
+const PORT = 8096
 const mongoose = require('mongoose')
 
 const logger = require('./logger')().log
