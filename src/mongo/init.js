@@ -9,10 +9,6 @@ const init = ({
     connectCallback = () => {}
   }) => {
     const options = { connectTimeoutMS: 10000 }
-    mongoose.set('useNewUrlParser', true)
-    mongoose.set('useFindAndModify', false)
-    mongoose.set('useCreateIndex', true)
-    mongoose.set('useUnifiedTopology', true)
 
     await mongoose.connect(mongoUrl, options)
       .then(async (data, args) => {
